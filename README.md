@@ -3,8 +3,8 @@ Protein-MDFA-Classifier
 This project provides a pipeline for protein sequence feature extraction, classification, and 5-fold evaluation using an MDFA-enhanced ensemble model.
 ## 📁 Project Structure
 ├── extract.py      # Feature extraction: AAC / dipeptide / PseAAC / CTD / ProtBert
-├── predict.py      # Single train-test run with MDFA + SVM + GBDT ensemble
-├── predict_5.py    # 5-fold cross-validation with full metrics & plots
+├── predicted.py      # Single train-test run with MDFA + SVM + GBDT ensemble
+├── predicted_5.py    # 5-fold cross-validation with full metrics & plots
 │
 └── data/           # Input data (raw sequences and/or extracted feature CSVs)
 
@@ -17,8 +17,8 @@ flowchart TD
 A[Raw sequences<br>(sequence,+label)] --> B[extract.py<br>Feature extraction]
 B --> C[Feature CSV]
 
-C --> D[predict.py<br>Single train/test ensemble]
-C --> E[predict_5.py<br>5-fold cross-validation]
+C --> D[predicted.py<br>Single train/test ensemble]
+C --> E[predicted_5.py<br>5-fold cross-validation]
 
 D --> F[Reports, confusion matrix,<br>saved model]
 E --> G[Cross-validation metrics,<br>ROC, metrics tables]
